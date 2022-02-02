@@ -13,10 +13,12 @@ spec:
     spec:
       containers:
       - name: gitopsapp 
-        image: gitopsapp:latest
+        image: ghcr.io/hgaiji/gitopsapp:0.0.1
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
